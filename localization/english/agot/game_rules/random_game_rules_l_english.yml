@@ -1,0 +1,19 @@
+﻿l_english:
+# All Random AGOT
+rule_game_rule_no_building_levels:0 "#R AGOT:#! No Building Levels"
+setting_no_building_levels_enabled:0 "No Building Levels Enabled"
+setting_no_building_levels_enabled_desc:0 "All holdings will start with default ck3 buildings."
+setting_no_building_levels_disabled:0 "No Building Levels Disabled"
+setting_no_building_levels_disabled_desc:0 "All holding buildings will remain with base AGOT logic."
+
+rule_game_rule_no_holding_levels:0 "#R AGOT:#! No Holding Levels"
+setting_no_holding_levels_enabled:0 "No Holding Levels Enabled"
+setting_no_holding_levels_enabled_desc:0 "All holdings will start with a base level holding type."
+setting_no_holding_levels_disabled:0 "No Holding Levels Disabled"
+setting_no_holding_levels_disabled_desc:0 "All holdings will remain with base AGOT logic."
+
+rule_game_rule_no_special_buildings:0 "#R AGOT:#! No Special Buildings"
+setting_no_special_buildings_enabled:0 "No Special Buildings Enabled"
+setting_no_special_buildings_enabled_desc:0 "No special buildings will be built on game start."
+setting_no_special_buildings_disabled:0 "No Special Buildings Disabled"
+setting_no_special_buildings_disabled_desc:0 "All special buildings will remain with base AGOT logic."

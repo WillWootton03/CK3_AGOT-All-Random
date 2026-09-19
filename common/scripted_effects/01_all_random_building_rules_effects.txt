@@ -1,0 +1,430 @@
+﻿# The no_holding_levels_enabled cap to tier 1 is now handled by the history overrides in
+# common/history/provinces/*.txt (every castle/city/temple dated entry capped at _01) plus
+# agot_restore_holding_levels_on_start_effect (common/scripted_effects/
+# 02_all_random_holding_level_restore_effects.txt), which restores canon tiers via pure
+# add_building - never remove_building - when the rule is off. See that file's header comment
+# for why. This used to be a separate effect that removed/downgraded the primary building via
+# remove_building at game start; every variant of that corrupted holdings, so it's gone.
+
+agot_remove_duchy_capital_buildings_on_start_effect = {
+	if = {
+		limit = { has_game_rule = no_building_levels_enabled }
+		province:8158 = { if = { limit = { has_building = agot_moonbowl_01 } remove_building = agot_moonbowl_01 } }
+		province:8999 = { if = { limit = { has_building = agot_ruins_chroyane_walls_02 } remove_building = agot_ruins_chroyane_walls_02 } }
+		province:4937 = { if = { limit = { has_building = leisure_palace_02 } remove_building = leisure_palace_02 } }
+		province:4960 = { if = { limit = { has_building = agot_vineyard_01 } remove_building = agot_vineyard_01 } }
+		province:5002 = { if = { limit = { has_building = agot_vineyard_02 } remove_building = agot_vineyard_02 } }
+		province:5032 = { if = { limit = { has_building = royal_forest_01 } remove_building = royal_forest_01 } }
+		province:5135 = { if = { limit = { has_building = siege_works_01 } remove_building = siege_works_01 } }
+		province:5257 = { if = { limit = { has_building = blacksmiths_01 } remove_building = blacksmiths_01 } }
+		province:5303 = { if = { limit = { has_building = royal_armory_02 } remove_building = royal_armory_02 } }
+		province:5352 = { if = { limit = { has_building = march_02 } remove_building = march_02 } }
+		province:5383 = { if = { limit = { has_building = march_01 } remove_building = march_01 } }
+		province:5412 = { if = { limit = { has_building = march_01 } remove_building = march_01 } }
+		province:5441 = { if = { limit = { has_building = march_01 } remove_building = march_01 } }
+		province:4415 = { if = { limit = { has_building = agot_dragonmont_01 } remove_building = agot_dragonmont_01 } }
+		province:7389 = { if = { limit = { has_building = agot_lys_walls_01 } remove_building = agot_lys_walls_01 } }
+		province:7397 = { if = { limit = { has_building = agot_lys_walls_01 } remove_building = agot_lys_walls_01 } }
+		province:7400 = { if = { limit = { has_building = agot_lys_walls_01 } remove_building = agot_lys_walls_01 } }
+		province:7559 = { if = { limit = { has_building = agot_myr_walls_01 } remove_building = agot_myr_walls_01 } }
+		province:8320 = { if = { limit = { has_building = agot_three_bells_01 } remove_building = agot_three_bells_01 } }
+		province:7714 = { if = { limit = { has_building = agot_pentos_walls_01 } remove_building = agot_pentos_walls_01 } }
+		province:8679 = { if = { limit = { has_building = agot_qohor_walls_01 } remove_building = agot_qohor_walls_01 } }
+		province:4151 = { if = { limit = { has_building = seven_gates_01 } remove_building = seven_gates_01 } }
+		province:4177 = { if = { limit = { has_building = agot_vineyard_01 } remove_building = agot_vineyard_01 } }
+		province:4197 = { if = { limit = { has_building = agot_vineyard_01 } remove_building = agot_vineyard_01 } }
+		province:4217 = { if = { limit = { has_building = agot_vineyard_01 } remove_building = agot_vineyard_01 } }
+		province:77 = { if = { limit = { has_building = agot_glass_gardens_03 } remove_building = agot_glass_gardens_03 } }
+		province:333 = { if = { limit = { has_building = royal_armory_01 } remove_building = royal_armory_01 } }
+		province:423 = { if = { limit = { has_building = tax_assessor_01 } remove_building = tax_assessor_01 } }
+		province:3237 = { if = { limit = { has_building = royal_garden_01 } remove_building = royal_garden_01 } }
+		province:3268 = { if = { limit = { has_building = archery_ranges_01 } remove_building = archery_ranges_01 } }
+		province:3293 = { if = { limit = { has_building = jousting_lists_01 } remove_building = jousting_lists_01 } }
+		province:3320 = { if = { limit = { has_building = march_01 } remove_building = march_01 } }
+		province:3354 = { if = { limit = { has_building = march_02 } remove_building = march_02 } }
+		province:3388 = { if = { limit = { has_building = military_academy_01 } remove_building = military_academy_01 } }
+		province:3455 = { if = { limit = { has_building = agot_lighthouse_01 } remove_building = agot_lighthouse_01 } }
+		province:3493 = { if = { limit = { has_building = agot_oldtown_walls_01 } remove_building = agot_oldtown_walls_01 } }
+		province:3534 = { if = { limit = { has_building = siege_works_01 } remove_building = siege_works_01 } }
+		province:3564 = { if = { limit = { has_building = agot_vineyard_02 } remove_building = agot_vineyard_02 } }
+		province:3601 = { if = { limit = { has_building = agot_vineyard_01 } remove_building = agot_vineyard_01 } }
+		province:3684 = { if = { limit = { has_building = royal_forest_01 } remove_building = royal_forest_01 } }
+		province:3730 = { if = { limit = { has_building = royal_forest_02 } remove_building = royal_forest_02 } }
+		province:4124 = { if = { limit = { has_building = agot_vineyard_03 } remove_building = agot_vineyard_03 } }
+		province:1686 = { if = { limit = { has_building = archery_ranges_01 } remove_building = archery_ranges_01 } }
+		province:1729 = { if = { limit = { has_building = royal_armory_01 } remove_building = royal_armory_01 } }
+		province:1764 = { if = { limit = { has_building = tax_assessor_01 } remove_building = tax_assessor_01 } }
+		province:1972 = { if = { limit = { has_building = agot_vineyard_01 } remove_building = agot_vineyard_01 } }
+		province:2058 = { if = { limit = { has_building = jousting_lists_01 } remove_building = jousting_lists_01 } }
+		province:2143 = { if = { limit = { has_building = military_academy_01 } remove_building = military_academy_01 } }
+		province:4439 = { if = { limit = { has_building = siege_works_01 } remove_building = siege_works_01 } }
+		province:4645 = { if = { limit = { has_building = march_02 } remove_building = march_02 } }
+		province:4673 = { if = { limit = { has_building = march_01 } remove_building = march_01 } }
+		province:4699 = { if = { limit = { has_building = march_01 } remove_building = march_01 } }
+		province:4720 = { if = { limit = { has_building = march_02 } remove_building = march_02 } }
+		province:4832 = { if = { limit = { has_building = royal_forest_02 } remove_building = royal_forest_02 } }
+		province:4917 = { if = { limit = { has_building = agot_lighthouse_02 } remove_building = agot_lighthouse_02 } }
+		province:2251 = { if = { limit = { has_building = military_academy_01 } remove_building = military_academy_01 } }
+		province:2344 = { if = { limit = { has_building = jousting_lists_01 } remove_building = jousting_lists_01 } }
+		province:2433 = { if = { limit = { has_building = agot_lighthouse_02 } remove_building = agot_lighthouse_02 } }
+		province:2455 = { if = { limit = { has_building = jousting_lists_01 } remove_building = jousting_lists_01 } }
+		province:2855 = { if = { limit = { has_building = tax_assessor_01 } remove_building = tax_assessor_01 } }
+		province:2884 = { if = { limit = { has_building = royal_armory_01 } remove_building = royal_armory_01 } }
+		province:3043 = { if = { limit = { has_building = agot_hornvale_01 } remove_building = agot_hornvale_01 } }
+		province:3067 = { if = { limit = { has_building = march_01 } remove_building = march_01 } }
+		province:3135 = { if = { limit = { has_building = march_01 } remove_building = march_01 } }
+		province:3223 = { if = { limit = { has_building = agot_lighthouse_01 } remove_building = agot_lighthouse_01 } }
+		province:5474 = { if = { limit = { has_building = agot_thenn_valley_01 } remove_building = agot_thenn_valley_01 } }
+		province:7351 = { if = { limit = { has_building = agot_tyrosh_walls_01 } remove_building = agot_tyrosh_walls_01 } }
+	}
+}
+
+agot_remove_special_buildings_on_start_effect = {
+	if = {
+		limit = { has_game_rule = no_special_buildings_enabled }
+		province:7918 = { agot_destroy_building_effect = { BUILDING = agot_hugor_hill } }
+		province:7944 = { agot_destroy_building_effect = { BUILDING = agot_warriors_ledge } }
+		province:7953 = { agot_destroy_building_effect = { BUILDING = agot_crones_steps } }
+		province:7956 = { agot_destroy_building_effect = { BUILDING = agot_godworf } }
+		province:8018 = { agot_destroy_building_effect = { BUILDING = agot_strangers_heights } }
+		province:8036 = { agot_destroy_building_effect = { BUILDING = agot_maidens_vale } }
+		province:9115 = { agot_destroy_building_effect = { BUILDING = agot_ruins_ar_noy } }
+		province:9383 = { agot_destroy_building_effect = { BUILDING = agot_ruins_gate_of_the_mother } }
+		province:8062 = { agot_destroy_building_effect = { BUILDING = agot_sealords_palace } }
+		province:8063 = { agot_destroy_building_effect = { BUILDING = agot_arsenal } }
+		province:8064 = { agot_destroy_building_effect = { BUILDING = agot_iron_bank } }
+		province:8065 = { agot_destroy_building_effect = { BUILDING = agot_palace_of_truth } }
+		province:8066 = { agot_destroy_building_effect = { BUILDING = agot_isle_of_the_gods } }
+		province:8071 = { agot_destroy_building_effect = { BUILDING = agot_drowned_town } }
+		province:8073 = { agot_destroy_building_effect = { BUILDING = agot_titan } }
+		province:8085 = { agot_destroy_building_effect = { BUILDING = agot_sweetwater_font } }
+		province:8116 = { agot_destroy_building_effect = { BUILDING = agot_revosghar } }
+		province:8158 = { agot_destroy_building_effect = { BUILDING = agot_nevios_retreat } }
+		province:8173 = { agot_destroy_building_effect = { BUILDING = agot_mothermont } }
+		province:8996 = { agot_destroy_building_effect = { BUILDING = agot_ruins_temple_of_the_womb } }
+		province:8997 = { agot_destroy_building_effect = { BUILDING = agot_ruins_fogs_touch_quarter } }
+		province:8998 = { agot_destroy_building_effect = { BUILDING = agot_ruins_festival_calle } }
+		province:9000 = { agot_destroy_building_effect = { BUILDING = agot_ruins_bridge_of_dreams } }
+		province:9001 = { agot_destroy_building_effect = { BUILDING = agot_ruins_home_port } }
+		province:9002 = { agot_destroy_building_effect = { BUILDING = agot_ruins_foreign_port } }
+		province:9003 = { agot_destroy_building_effect = { BUILDING = agot_ruins_palace_of_sorrows } }
+		province:9031 = { agot_destroy_building_effect = { BUILDING = agot_tianos_bastion } }
+		province:9031 = { agot_destroy_building_effect = { BUILDING = agot_ruins_tianos_bastion } }
+		province:9038 = { agot_destroy_building_effect = { BUILDING = agot_turtle_lake } }
+		province:9083 = { agot_destroy_building_effect = { BUILDING = agot_khals_run } }
+		province:7448 = { agot_destroy_building_effect = { BUILDING = agot_triarchy_council } }
+		province:7448 = { agot_destroy_building_effect = { BUILDING = agot_ruins_triarchy_council } }
+		province:7472 = { agot_destroy_building_effect = { BUILDING = agot_tree_of_crowns } }
+		province:7528 = { agot_destroy_building_effect = { BUILDING = agot_miviyaan_slave_market } }
+		province:7550 = { agot_destroy_building_effect = { BUILDING = agot_monument_of_borderland } }
+		province:4937 = { agot_destroy_building_effect = { BUILDING = sunspear } }
+		province:4938 = { agot_destroy_building_effect = { BUILDING = agot_nymeros_tower } }
+		province:4939 = { agot_destroy_building_effect = { BUILDING = agot_the_water_gardens } }
+		province:4940 = { agot_destroy_building_effect = { BUILDING = agot_the_shadow_city } }
+		province:4945 = { agot_destroy_building_effect = { BUILDING = agot_plankytown } }
+		province:5002 = { agot_destroy_building_effect = { BUILDING = agot_godsgrace } }
+		province:5041 = { agot_destroy_building_effect = { BUILDING = agot_broken_tower } }
+		province:5320 = { agot_destroy_building_effect = { BUILDING = agot_merling_port } }
+		province:5472 = { agot_destroy_building_effect = { BUILDING = agot_ghaston_grey } }
+		province:5135 = { agot_destroy_building_effect = { BUILDING = agot_hellholt } }
+		province:5155 = { agot_destroy_building_effect = { BUILDING = agot_hellgate_hall } }
+		province:5155 = { agot_destroy_building_effect = { BUILDING = agot_ruins_hellgate_hall } }
+		province:5211 = { agot_destroy_building_effect = { BUILDING = agot_sandstone } }
+		province:5257 = { agot_destroy_building_effect = { BUILDING = agot_starfall } }
+		province:5303 = { agot_destroy_building_effect = { BUILDING = agot_yronwood } }
+		province:5352 = { agot_destroy_building_effect = { BUILDING = agot_skyreach } }
+		province:5379 = { agot_destroy_building_effect = { BUILDING = agot_tower_of_joy } }
+		province:5379 = { agot_destroy_building_effect = { BUILDING = agot_ruin_tower_of_joy } }
+		province:5453 = { agot_destroy_building_effect = { BUILDING = agot_pit_of_snakes } }
+		province:5465 = { agot_destroy_building_effect = { BUILDING = agot_vultures_roost } }
+		province:4415 = { agot_destroy_building_effect = { BUILDING = dragonstone } }
+		province:4419 = { agot_destroy_building_effect = { BUILDING = agot_driftmark } }
+		province:4424 = { agot_destroy_building_effect = { BUILDING = agot_hightide } }
+		province:4424 = { agot_destroy_building_effect = { BUILDING = agot_ruins_hightide } }
+		province:4425 = { agot_destroy_building_effect = { BUILDING = agot_spicetown } }
+		province:4425 = { agot_destroy_building_effect = { BUILDING = agot_ruins_spicetown } }
+		province:4428 = { agot_destroy_building_effect = { BUILDING = agot_sharp_point_beacon } }
+		province:4436 = { agot_destroy_building_effect = { BUILDING = agot_claw_isle } }
+		province:5914 = { agot_destroy_building_effect = { BUILDING = agot_last_green } }
+		province:5948 = { agot_destroy_building_effect = { BUILDING = agot_btw_milkwater_cairns } }
+		province:5957 = { agot_destroy_building_effect = { BUILDING = agot_charred_weald } }
+		province:6002 = { agot_destroy_building_effect = { BUILDING = agot_the_heated_pools } }
+		province:6011 = { agot_destroy_building_effect = { BUILDING = agot_btw_milkwater_cairns } }
+		province:6028 = { agot_destroy_building_effect = { BUILDING = agot_ruins_fist_of_the_first_men } }
+		province:6052 = { agot_destroy_building_effect = { BUILDING = agot_cold_cradle } }
+		province:6059 = { agot_destroy_building_effect = { BUILDING = agot_haggons_tower } }
+		province:6065 = { agot_destroy_building_effect = { BUILDING = agot_whitetree } }
+		province:6070 = { agot_destroy_building_effect = { BUILDING = agot_ruins_gorms_port } }
+		province:8222 = { agot_destroy_building_effect = { BUILDING = agot_ruins_drekis_tunnels } }
+		province:8223 = { agot_destroy_building_effect = { BUILDING = agot_ruins_raymons_hall } }
+		province:8224 = { agot_destroy_building_effect = { BUILDING = agot_ruins_halgars_keep } }
+		province:9301 = { agot_destroy_building_effect = { BUILDING = agot_ruins_ghoyan_drohe } }
+		province:9379 = { agot_destroy_building_effect = { BUILDING = agot_noyne_watch } }
+		province:8233 = { agot_destroy_building_effect = { BUILDING = agot_third_eye_refuge } }
+		province:8236 = { agot_destroy_building_effect = { BUILDING = agot_hall_of_the_streets } }
+		province:8239 = { agot_destroy_building_effect = { BUILDING = agot_red_temple_lorath } }
+		province:8242 = { agot_destroy_building_effect = { BUILDING = agot_harvest_hall } }
+		province:8249 = { agot_destroy_building_effect = { BUILDING = agot_qarlons_fort } }
+		province:8249 = { agot_destroy_building_effect = { BUILDING = agot_ruins_qarlons_fort } }
+		province:8273 = { agot_destroy_building_effect = { BUILDING = agot_leviathan_beach } }
+		province:8280 = { agot_destroy_building_effect = { BUILDING = agot_norvos_caves } }
+		province:8281 = { agot_destroy_building_effect = { BUILDING = agot_fisher_hall } }
+		province:8299 = { agot_destroy_building_effect = { BUILDING = agot_port_ampnavath } }
+		province:7389 = { agot_destroy_building_effect = { BUILDING = agot_temple_of_trade } }
+		province:7390 = { agot_destroy_building_effect = { BUILDING = agot_temple_of_yndros } }
+		province:7393 = { agot_destroy_building_effect = { BUILDING = agot_perfumed_garden } }
+		province:7395 = { agot_destroy_building_effect = { BUILDING = agot_red_temple_lys } }
+		province:7408 = { agot_destroy_building_effect = { BUILDING = agot_qeldlen_fort } }
+		province:8061 = { agot_destroy_building_effect = { BUILDING = agot_prison_of_lys } }
+		province:8060 = { agot_destroy_building_effect = { BUILDING = agot_port_of_lys } }
+		province:7557 = { agot_destroy_building_effect = { BUILDING = agot_great_wheel } }
+		province:7558 = { agot_destroy_building_effect = { BUILDING = agot_myr_cliffs } }
+		province:7559 = { agot_destroy_building_effect = { BUILDING = agot_myr } }
+		province:7560 = { agot_destroy_building_effect = { BUILDING = agot_grand_temple_of_gelenei } }
+		province:7562 = { agot_destroy_building_effect = { BUILDING = agot_statue_of_trios } }
+		province:7563 = { agot_destroy_building_effect = { BUILDING = agot_red_temple_myr } }
+		province:7600 = { agot_destroy_building_effect = { BUILDING = agot_taelas_gap } }
+		province:7681 = { agot_destroy_building_effect = { BUILDING = agot_naeros_irrigation } }
+		province:7706 = { agot_destroy_building_effect = { BUILDING = agot_helanah_fort } }
+		province:8320 = { agot_destroy_building_effect = { BUILDING = agot_barbate_fortress } }
+		province:8321 = { agot_destroy_building_effect = { BUILDING = agot_carillon_walls } }
+		province:8322 = { agot_destroy_building_effect = { BUILDING = agot_sinners_steps } }
+		province:8323 = { agot_destroy_building_effect = { BUILDING = agot_high_port } }
+		province:8325 = { agot_destroy_building_effect = { BUILDING = agot_brewery_grove } }
+		province:8326 = { agot_destroy_building_effect = { BUILDING = agot_rivermans_haunt } }
+		province:8327 = { agot_destroy_building_effect = { BUILDING = agot_low_port } }
+		province:8343 = { agot_destroy_building_effect = { BUILDING = agot_dorenrashi } }
+		province:8381 = { agot_destroy_building_effect = { BUILDING = agot_jorreblenon } }
+		province:8391 = { agot_destroy_building_effect = { BUILDING = agot_smith_spire } }
+		province:8401 = { agot_destroy_building_effect = { BUILDING = agot_norvos_caves } }
+		province:8405 = { agot_destroy_building_effect = { BUILDING = agot_norvos_caves } }
+		province:8411 = { agot_destroy_building_effect = { BUILDING = agot_norvos_caves } }
+		province:8413 = { agot_destroy_building_effect = { BUILDING = agot_norvos_caves } }
+		province:8421 = { agot_destroy_building_effect = { BUILDING = agot_norvos_caves } }
+		province:8429 = { agot_destroy_building_effect = { BUILDING = agot_bloody_axe_pass } }
+		province:8455 = { agot_destroy_building_effect = { BUILDING = agot_vostmont } }
+		province:8470 = { agot_destroy_building_effect = { BUILDING = agot_goat_fort } }
+		province:8496 = { agot_destroy_building_effect = { BUILDING = agot_darkwash_watch } }
+		province:8508 = { agot_destroy_building_effect = { BUILDING = agot_meletista } }
+		province:8519 = { agot_destroy_building_effect = { BUILDING = agot_green_marble_quarries } }
+		province:9197 = { agot_destroy_building_effect = { BUILDING = agot_ruins_ny_sar } }
+		province:9388 = { agot_destroy_building_effect = { BUILDING = agot_wrecks_of_dagger_lake } }
+		province:7709 = { agot_destroy_building_effect = { BUILDING = agot_pentos_harbor } }
+		province:7711 = { agot_destroy_building_effect = { BUILDING = agot_magister_harbor } }
+		province:7713 = { agot_destroy_building_effect = { BUILDING = agot_red_temple_pentos } }
+		province:7714 = { agot_destroy_building_effect = { BUILDING = agot_pentos } }
+		province:7715 = { agot_destroy_building_effect = { BUILDING = agot_khals_manse } }
+		province:7825 = { agot_destroy_building_effect = { BUILDING = agot_valdrizes } }
+		province:7843 = { agot_destroy_building_effect = { BUILDING = agot_crossroads_market } }
+		province:7854 = { agot_destroy_building_effect = { BUILDING = agot_ar_kon_barracks } }
+		province:7881 = { agot_destroy_building_effect = { BUILDING = agot_nontelos_bazaar } }
+		province:8679 = { agot_destroy_building_effect = { BUILDING = agot_onyx_palace } }
+		province:8681 = { agot_destroy_building_effect = { BUILDING = agot_sanguine_pyramid } }
+		province:8682 = { agot_destroy_building_effect = { BUILDING = agot_braided_barracks } }
+		province:8684 = { agot_destroy_building_effect = { BUILDING = agot_qohor_docks } }
+		province:8685 = { agot_destroy_building_effect = { BUILDING = agot_forest_of_steel } }
+		province:8686 = { agot_destroy_building_effect = { BUILDING = agot_temple_of_the_piercing_light } }
+		province:8687 = { agot_destroy_building_effect = { BUILDING = agot_grand_slave_markets_of_qohor } }
+		province:8734 = { agot_destroy_building_effect = { BUILDING = agot_ebon_ridge } }
+		province:8831 = { agot_destroy_building_effect = { BUILDING = agot_jewel_of_the_qhoyne } }
+		province:8847 = { agot_destroy_building_effect = { BUILDING = agot_the_obsidian_gatehouse } }
+		province:8878 = { agot_destroy_building_effect = { BUILDING = agot_the_silver_mountain } }
+		province:8894 = { agot_destroy_building_effect = { BUILDING = agot_qohor_digores } }
+		province:8908 = { agot_destroy_building_effect = { BUILDING = agot_qohor_digores } }
+		province:8910 = { agot_destroy_building_effect = { BUILDING = agot_qohor_digores } }
+		province:8913 = { agot_destroy_building_effect = { BUILDING = agot_yaghorsosten_harbor } }
+		province:8919 = { agot_destroy_building_effect = { BUILDING = agot_qohor_digores } }
+		province:8924 = { agot_destroy_building_effect = { BUILDING = agot_the_maw } }
+		province:8927 = { agot_destroy_building_effect = { BUILDING = agot_qohor_digores } }
+		province:8980 = { agot_destroy_building_effect = { BUILDING = agot_the_perch } }
+		province:8584 = { agot_destroy_building_effect = { BUILDING = agot_hairy_port } }
+		province:8600 = { agot_destroy_building_effect = { BUILDING = agot_smiths_walls } }
+		province:8618 = { agot_destroy_building_effect = { BUILDING = agot_bear_trap } }
+		province:4151 = { agot_destroy_building_effect = { BUILDING = the_red_keep } }
+		province:4152 = { agot_destroy_building_effect = { BUILDING = agot_sept_of_remembrance } }
+		province:4152 = { agot_destroy_building_effect = { BUILDING = dragonpit } }
+		province:4152 = { agot_destroy_building_effect = { BUILDING = dragonpit_ruins } }
+		province:4153 = { agot_destroy_building_effect = { BUILDING = holy_site_great_sept } }
+		province:8232 = { agot_destroy_building_effect = { BUILDING = agot_flea_bottom } }
+		province:4155 = { agot_destroy_building_effect = { BUILDING = cobblers_square } }
+		province:4204 = { agot_destroy_building_effect = { BUILDING = agot_old_stone_bridge } }
+		province:4241 = { agot_destroy_building_effect = { BUILDING = agot_duskendale } }
+		province:4268 = { agot_destroy_building_effect = { BUILDING = agot_rooks_rest } }
+		province:4290 = { agot_destroy_building_effect = { BUILDING = agot_whispers } }
+		province:4388 = { agot_destroy_building_effect = { BUILDING = agot_stonedance } }
+		province:5512 = { agot_destroy_building_effect = { BUILDING = agot_btw_frostfang_crypts } }
+		province:5523 = { agot_destroy_building_effect = { BUILDING = agot_btw_frostfang_crypts } }
+		province:5530 = { agot_destroy_building_effect = { BUILDING = agot_btw_frostfang_crypts } }
+		province:5559 = { agot_destroy_building_effect = { BUILDING = agot_btw_frostfang_crypts } }
+		province:5565 = { agot_destroy_building_effect = { BUILDING = agot_btw_frostfang_crypts } }
+		province:5584 = { agot_destroy_building_effect = { BUILDING = agot_btw_milkwater_cairns } }
+		province:5591 = { agot_destroy_building_effect = { BUILDING = agot_btw_frostfang_crypts } }
+		province:5595 = { agot_destroy_building_effect = { BUILDING = agot_btw_milkwater_cairns } }
+		province:5599 = { agot_destroy_building_effect = { BUILDING = agot_ruddy_hall } }
+		province:5608 = { agot_destroy_building_effect = { BUILDING = agot_btw_frostfang_crypts } }
+		province:5678 = { agot_destroy_building_effect = { BUILDING = agot_the_heated_pools } }
+		province:5748 = { agot_destroy_building_effect = { BUILDING = agot_selkie_sund } }
+		province:5836 = { agot_destroy_building_effect = { BUILDING = agot_great_ice_dome } }
+		province:5859 = { agot_destroy_building_effect = { BUILDING = agot_cold_cradle } }
+		province:2723 = { agot_destroy_building_effect = { BUILDING = pyke } }
+		province:2729 = { agot_destroy_building_effect = { BUILDING = agot_lordsport } }
+		province:2748 = { agot_destroy_building_effect = { BUILDING = agot_hoare_castle } }
+		province:2756 = { agot_destroy_building_effect = { BUILDING = agot_hammerhorn } }
+		province:2795 = { agot_destroy_building_effect = { BUILDING = holy_site_naggas_hill } }
+		province:2819 = { agot_destroy_building_effect = { BUILDING = agot_ten_towers } }
+		province:2833 = { agot_destroy_building_effect = { BUILDING = agot_volmark } }
+		province:2847 = { agot_destroy_building_effect = { BUILDING = agot_grey_garden } }
+		province:2854 = { agot_destroy_building_effect = { BUILDING = agot_lonely_light } }
+		province:77 = { agot_destroy_building_effect = { BUILDING = winterfell } }
+		province:136 = { agot_destroy_building_effect = { BUILDING = agot_last_hearth } }
+		province:247 = { agot_destroy_building_effect = { BUILDING = agot_karhold } }
+		province:312 = { agot_destroy_building_effect = { BUILDING = agot_grey_cliffs } }
+		province:322 = { agot_destroy_building_effect = { BUILDING = agot_grey_cliffs } }
+		province:333 = { agot_destroy_building_effect = { BUILDING = agot_dreadfort } }
+		province:423 = { agot_destroy_building_effect = { BUILDING = agot_new_castle } }
+		province:424 = { agot_destroy_building_effect = { BUILDING = agot_white_harbor } }
+		province:425 = { agot_destroy_building_effect = { BUILDING = agot_wolfs_den } }
+		province:432 = { agot_destroy_building_effect = { BUILDING = agot_sept_of_the_snows } }
+		province:490 = { agot_destroy_building_effect = { BUILDING = agot_oldcastle } }
+		province:534 = { agot_destroy_building_effect = { BUILDING = agot_ramsgate } }
+		province:579 = { agot_destroy_building_effect = { BUILDING = agot_hornwood } }
+		province:617 = { agot_destroy_building_effect = { BUILDING = agot_widows_watch } }
+		province:664 = { agot_destroy_building_effect = { BUILDING = agot_rills_stables } }
+		province:735 = { agot_destroy_building_effect = { BUILDING = agot_burned_port } }
+		province:830 = { agot_destroy_building_effect = { BUILDING = agot_blackpool } }
+		province:886 = { agot_destroy_building_effect = { BUILDING = agot_torrhens_square } }
+		province:940 = { agot_destroy_building_effect = { BUILDING = agot_deepwood_motte } }
+		province:1027 = { agot_destroy_building_effect = { BUILDING = agot_ironrath } }
+		province:1037 = { agot_destroy_building_effect = { BUILDING = agot_highpoint } }
+		province:993 = { agot_destroy_building_effect = { BUILDING = agot_warg_king } }
+		province:1121 = { agot_destroy_building_effect = { BUILDING = agot_barrow_keep } }
+		province:1215 = { agot_destroy_building_effect = { BUILDING = agot_dead_goose_tree } }
+		province:1310 = { agot_destroy_building_effect = { BUILDING = agot_greywater_watch } }
+		province:1489 = { agot_destroy_building_effect = { BUILDING = agot_flints_cliffs } }
+		province:1499 = { agot_destroy_building_effect = { BUILDING = agot_flints_cliffs } }
+		province:1509 = { agot_destroy_building_effect = { BUILDING = agot_flints_cliffs } }
+		province:1565 = { agot_destroy_building_effect = { BUILDING = agot_flints_cliffs } }
+		province:1593 = { agot_destroy_building_effect = { BUILDING = agot_unicorn_glen } }
+		province:1636 = { agot_destroy_building_effect = { BUILDING = agot_rodriks_gift } }
+		province:1650 = { agot_destroy_building_effect = { BUILDING = moat_cailin } }
+		province:3237 = { agot_destroy_building_effect = { BUILDING = highgarden } }
+		province:3268 = { agot_destroy_building_effect = { BUILDING = agot_cider_hall } }
+		province:3293 = { agot_destroy_building_effect = { BUILDING = agot_ashford_tourney_grounds } }
+		province:3305 = { agot_destroy_building_effect = { BUILDING = agot_sept_at_holyhall } }
+		province:3320 = { agot_destroy_building_effect = { BUILDING = agot_starpike } }
+		province:3354 = { agot_destroy_building_effect = { BUILDING = agot_witchs_wood } }
+		province:3422 = { agot_destroy_building_effect = { BUILDING = agot_the_ring } }
+		province:3428 = { agot_destroy_building_effect = { BUILDING = agot_dunnsbridge } }
+		province:3455 = { agot_destroy_building_effect = { BUILDING = agot_three_towers } }
+		province:3462 = { agot_destroy_building_effect = { BUILDING = agot_cuy } }
+		province:3493 = { agot_destroy_building_effect = { BUILDING = the_hightower } }
+		province:3494 = { agot_destroy_building_effect = { BUILDING = agot_port_of_oldtown } }
+		province:3496 = { agot_destroy_building_effect = { BUILDING = agot_chequered_square } }
+		province:3497 = { agot_destroy_building_effect = { BUILDING = agot_seven_shrines } }
+		province:3499 = { agot_destroy_building_effect = { BUILDING = the_citadel } }
+		province:3500 = { agot_destroy_building_effect = { BUILDING = holy_site_starry_sept } }
+		province:3534 = { agot_destroy_building_effect = { BUILDING = agot_blackcrown } }
+		province:3564 = { agot_destroy_building_effect = { BUILDING = agot_brightwater_moat } }
+		province:3601 = { agot_destroy_building_effect = { BUILDING = agot_honeyholt_apiaries } }
+		province:3655 = { agot_destroy_building_effect = { BUILDING = agot_red_lake } }
+		province:3684 = { agot_destroy_building_effect = { BUILDING = agot_goldengrove } }
+		province:3730 = { agot_destroy_building_effect = { BUILDING = agot_old_oak } }
+		province:3967 = { agot_destroy_building_effect = { BUILDING = agot_tumbleton } }
+		province:4005 = { agot_destroy_building_effect = { BUILDING = agot_bitterbridge_original } }
+		province:4005 = { agot_destroy_building_effect = { BUILDING = agot_bitterbridge } }
+		province:4041 = { agot_destroy_building_effect = { BUILDING = agot_grassfield_florestries } }
+		province:4072 = { agot_destroy_building_effect = { BUILDING = agot_merryweather_vaults } }
+		province:4102 = { agot_destroy_building_effect = { BUILDING = agot_oakenshield_bastion } }
+		province:4125 = { agot_destroy_building_effect = { BUILDING = agot_redwyne_port } }
+		province:4148 = { agot_destroy_building_effect = { BUILDING = agot_mermaids_palace } }
+		province:1658 = { agot_destroy_building_effect = { BUILDING = riverrun } }
+		province:1686 = { agot_destroy_building_effect = { BUILDING = agot_raventree_hall } }
+		province:1692 = { agot_destroy_building_effect = { BUILDING = agot_mudgrave } }
+		province:1718 = { agot_destroy_building_effect = { BUILDING = agot_ruins_of_oldforge } }
+		province:1723 = { agot_destroy_building_effect = { BUILDING = agot_pennytree } }
+		province:1729 = { agot_destroy_building_effect = { BUILDING = agot_seagard } }
+		province:1730 = { agot_destroy_building_effect = { BUILDING = agot_walls_of_seagard } }
+		province:1737 = { agot_destroy_building_effect = { BUILDING = agot_oldstones } }
+		province:1764 = { agot_destroy_building_effect = { BUILDING = the_twins } }
+		province:1882 = { agot_destroy_building_effect = { BUILDING = agot_inn_at_the_crossroads } }
+		province:1910 = { agot_destroy_building_effect = { BUILDING = agot_maidenpool } }
+		province:1934 = { agot_destroy_building_effect = { BUILDING = harrenhal } }
+		province:1934 = { agot_destroy_building_effect = { BUILDING = ruins_harrenhal } }
+		province:2002 = { agot_destroy_building_effect = { BUILDING = agot_atranta } }
+		province:2032 = { agot_destroy_building_effect = { BUILDING = agot_stoney_sept } }
+		province:2054 = { agot_destroy_building_effect = { BUILDING = agot_bechester_motherhouse } }
+		province:2054 = { agot_destroy_building_effect = { BUILDING = agot_bechester_motherhouse_ruins } }
+		province:2058 = { agot_destroy_building_effect = { BUILDING = agot_stone_hedge } }
+		province:2063 = { agot_destroy_building_effect = { BUILDING = agot_inn_of_the_kneeling_man } }
+		province:2071 = { agot_destroy_building_effect = { BUILDING = agot_high_heart } }
+		province:2071 = { agot_destroy_building_effect = { BUILDING = agot_ruin_high_heart } }
+		province:2143 = { agot_destroy_building_effect = { BUILDING = agot_wayfarers_rest } }
+		province:2189 = { agot_destroy_building_effect = { BUILDING = agot_fairmarket } }
+		province:7294 = { agot_destroy_building_effect = { BUILDING = agot_racallios_fort } }
+		province:7333 = { agot_destroy_building_effect = { BUILDING = agot_crab_fields } }
+		province:4439 = { agot_destroy_building_effect = { BUILDING = storms_end } }
+		province:4446 = { agot_destroy_building_effect = { BUILDING = agot_bronzegate } }
+		province:4468 = { agot_destroy_building_effect = { BUILDING = agot_griffins_roost } }
+		province:4797 = { agot_destroy_building_effect = { BUILDING = agot_summerhall } }
+		province:4797 = { agot_destroy_building_effect = { BUILDING = agot_summerhall_ruins } }
+		province:4580 = { agot_destroy_building_effect = { BUILDING = agot_weeping_tower } }
+		province:4581 = { agot_destroy_building_effect = { BUILDING = agot_broken_shield_inn } }
+		province:4623 = { agot_destroy_building_effect = { BUILDING = agot_paintwood } }
+		province:4645 = { agot_destroy_building_effect = { BUILDING = agot_stonehelm } }
+		province:4673 = { agot_destroy_building_effect = { BUILDING = agot_blackhaven } }
+		province:4720 = { agot_destroy_building_effect = { BUILDING = agot_nightsong } }
+		province:4861 = { agot_destroy_building_effect = { BUILDING = agot_kingswood_brotherhood } }
+		province:4861 = { agot_destroy_building_effect = { BUILDING = agot_ruins_kingswood_brotherhood } }
+		province:4897 = { agot_destroy_building_effect = { BUILDING = agot_haywater_docks } }
+		province:4917 = { agot_destroy_building_effect = { BUILDING = agot_evenfall_hall } }
+		province:4927 = { agot_destroy_building_effect = { BUILDING = agot_morne } }
+		province:2251 = { agot_destroy_building_effect = { BUILDING = the_eyrie } }
+		province:2255 = { agot_destroy_building_effect = { BUILDING = agot_gates_of_the_moon } }
+		province:2263 = { agot_destroy_building_effect = { BUILDING = the_bloody_gate } }
+		province:2277 = { agot_destroy_building_effect = { BUILDING = agot_redfort } }
+		province:2308 = { agot_destroy_building_effect = { BUILDING = agot_waxley_candlery } }
+		province:2344 = { agot_destroy_building_effect = { BUILDING = agot_ironoaks } }
+		province:2385 = { agot_destroy_building_effect = { BUILDING = agot_olafs_tomato_farm } }
+		province:2398 = { agot_destroy_building_effect = { BUILDING = agot_ruthermont } }
+		province:2433 = { agot_destroy_building_effect = { BUILDING = agot_grafton_keep } }
+		province:2434 = { agot_destroy_building_effect = { BUILDING = agot_gull_harbor } }
+		province:2435 = { agot_destroy_building_effect = { BUILDING = agot_maris_motherhouse } }
+		province:2439 = { agot_destroy_building_effect = { BUILDING = agot_osgood_square } }
+		province:2442 = { agot_destroy_building_effect = { BUILDING = agot_gold_feather_house } }
+		province:2455 = { agot_destroy_building_effect = { BUILDING = agot_runestone } }
+		province:2474 = { agot_destroy_building_effect = { BUILDING = agot_upcliffs_haven } }
+		province:2541 = { agot_destroy_building_effect = { BUILDING = agot_strongsong } }
+		province:2687 = { agot_destroy_building_effect = { BUILDING = agot_sunrise_keep } }
+		province:2718 = { agot_destroy_building_effect = { BUILDING = agot_sisterton } }
+		province:5 = { agot_destroy_building_effect = { BUILDING = agot_castle_black } }
+		province:1 = { agot_destroy_building_effect = { BUILDING = agot_nightfort } }
+		province:8 = { agot_destroy_building_effect = { BUILDING = agot_shadow_tower } }
+		province:9 = { agot_destroy_building_effect = { BUILDING = agot_bridge_of_skulls } }
+		province:14 = { agot_destroy_building_effect = { BUILDING = agot_eastwatch } }
+		province:2855 = { agot_destroy_building_effect = { BUILDING = casterly_rock } }
+		province:2863 = { agot_destroy_building_effect = { BUILDING = agot_lann_sept } }
+		province:2865 = { agot_destroy_building_effect = { BUILDING = agot_lions_dock } }
+		province:2871 = { agot_destroy_building_effect = { BUILDING = agot_midges_inn } }
+		province:2884 = { agot_destroy_building_effect = { BUILDING = agot_crakehall } }
+		province:2916 = { agot_destroy_building_effect = { BUILDING = agot_cornfield } }
+		province:2922 = { agot_destroy_building_effect = { BUILDING = agot_the_bower } }
+		province:2961 = { agot_destroy_building_effect = { BUILDING = agot_silverhill } }
+		province:2999 = { agot_destroy_building_effect = { BUILDING = agot_deep_den } }
+		province:3067 = { agot_destroy_building_effect = { BUILDING = agot_golden_tooth } }
+		province:3092 = { agot_destroy_building_effect = { BUILDING = agot_ashemark } }
+		province:3135 = { agot_destroy_building_effect = { BUILDING = agot_banefort } }
+		province:3180 = { agot_destroy_building_effect = { BUILDING = agot_castamere } }
+		province:3180 = { agot_destroy_building_effect = { BUILDING = agot_castamere_ruins } }
+		province:3201 = { agot_destroy_building_effect = { BUILDING = agot_feastfires } }
+		province:3223 = { agot_destroy_building_effect = { BUILDING = agot_fair_isle } }
+		province:5474 = { agot_destroy_building_effect = { BUILDING = agot_thenn_great_kilns } }
+		province:5480 = { agot_destroy_building_effect = { BUILDING = agot_srunmued_copper_mines } }
+		province:5485 = { agot_destroy_building_effect = { BUILDING = agot_krih_tin_mines } }
+		province:5490 = { agot_destroy_building_effect = { BUILDING = agot_thenn_great_circle } }
+		province:5484 = { agot_destroy_building_effect = { BUILDING = agot_thenn_small_circle } }
+		province:7351 = { agot_destroy_building_effect = { BUILDING = agot_tyrosh } }
+		province:7355 = { agot_destroy_building_effect = { BUILDING = agot_red_temple_tyrosh } }
+		province:7356 = { agot_destroy_building_effect = { BUILDING = agot_bleeding_tower } }
+		province:7358 = { agot_destroy_building_effect = { BUILDING = agot_grand_temple_of_trios } }
+	}
+}

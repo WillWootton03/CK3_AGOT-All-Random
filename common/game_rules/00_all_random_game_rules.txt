@@ -1,0 +1,32 @@
+game_rule_no_building_levels = {
+	default = no_building_levels_disabled
+	categories = {
+		agot
+		agot_buildings
+	}
+
+	no_building_levels_enabled = {}
+	no_building_levels_disabled = {}
+}
+
+game_rule_no_holding_levels = {
+	default = no_holding_levels_disabled
+	categories = {
+		agot
+		agot_buildings
+	}
+
+	no_holding_levels_enabled = {}
+	no_holding_levels_disabled = {}
+}
+
+game_rule_no_special_buildings = {
+	default = no_special_buildings_disabled
+	categories = {
+		agot
+		agot_buildings
+	}
+
+	no_special_buildings_enabled = {}
+	no_special_buildings_disabled = {}
+}
