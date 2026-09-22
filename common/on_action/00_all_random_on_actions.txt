@@ -1,0 +1,23 @@
+# AGOT's own can_construct_potential triggers (dragon pits, special buildings, etc.) gate
+# construction behind has_global_variable = world_is_active, but nothing in the base mod - or
+# any mod we've found - ever sets it. Confirmed via error.log: "Variable 'world_is_active' is
+# used but is never set", across multiple sessions. Left unset, that construction is permanently
+# blocked. We set it ourselves, one day after game start, once bootstrap/history processing has
+# settled - title:c_ruins.holder is the same delayed-effect anchor AGOT's own code uses
+# (agot_on_actions/agot_game_start.txt) for post-start one-shot effects.
+on_game_start = {
+	on_actions = {
+		all_random_world_is_active_setup
+	}
+}
+
+all_random_world_is_active_setup = {
+	effect = {
+		title:c_ruins.holder = {
+			trigger_event = {
+				id = all_random_events.0001
+				days = 1
+			}
+		}
+	}
+}

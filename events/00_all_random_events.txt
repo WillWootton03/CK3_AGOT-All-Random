@@ -1,0 +1,13 @@
+namespace = all_random_events
+
+all_random_events.0001 = {
+	type = character_event
+	hidden = yes
+
+	immediate = {
+		set_global_variable = {
+			name = world_is_active
+			value = yes
+		}
+	}
+}
